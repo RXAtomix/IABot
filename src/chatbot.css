@@ -1,43 +1,50 @@
+body{
+    background-color: #212121;
+}
 .chat-container {
-    width: 300px;
-    margin: auto;
-    border: 1px solid #ccc;
+    width: 99%;
+    height: 100%;
     padding: 10px;
-    border-radius: 5px;
 }
 
 .chat-box {
-    height: 200px;
-    overflow-y: scroll;
-    border: 1px solid #ccc;
+    height: 480px;
+    overflow-y: auto;
     margin-bottom: 10px;
     padding: 10px;
 }
-
+.message-sender{
+    font-weight: bold;
+    font-size: 18px;
+}
 .message {
-    background-color: #f2f2f2;
+    color:white;
     padding: 5px 10px;
     margin-bottom: 5px;
 }
-
-input[type="text"] {
-    width: calc(100% - 70px);
-    padding: 5px;
-    border-radius: 5px;
+.message-input{
+    width: 98%;
+    padding: 10px;
+    border-radius: 15px;
     border: 1px solid #ccc;
     margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
 }
-
+input[type="text"] {
+    width: calc(100% - 70px);
+    border-width: 0px;
+    background-color: #212121;
+    color:white;
+}
+#message-input:focus {
+    outline: none;
+}
 button {
-    width: 60px;
     padding: 5px;
     border-radius: 5px;
     border: none;
-    background-color: #007bff;
+    background-color: rgba(180, 180, 180, 0.1);
     color: #fff;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
 }

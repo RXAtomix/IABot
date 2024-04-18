@@ -5,7 +5,7 @@ function sendMessage() {
     var message = messageInput.value;
     if (message.trim() !== "") {
         var chatBox = document.getElementById("chat-box");
-        chatBox.innerHTML += "<div class='message'> <p>You</p><p> " + message + "</p></div>";
+        chatBox.innerHTML += "<div class='message'> <p class='message-sender'>You</p><p> " + message + "</p></div>";
         messageInput.value = "";
         chatBox.scrollTop = chatBox.scrollHeight;
     }
@@ -22,7 +22,6 @@ function sendBotMessage(message){
 }
 function answerMessage (){
     //envoie la réponse du bot en fonction de la hauteur dans la conversation du bot
-    console.log(messagenumber);
     if (messagenumber == 0){
         isverified();
     }
@@ -34,13 +33,12 @@ function isverified (){
     var isverified = numberverification();
     if (isverified){
         user = "Romain"; //a voir lorsque la bdd sera créer
-        message = "<div class='message'> <p>Bot</p><p>Bonjour " + user + ", sur quel élément de votre santé souhaitez vous avoir un montlhy course?</p></div>";
+        message = "<div class='message'> <p class='message-sender'>Bot</p><p>Bonjour " + user + ", sur quel élément de votre santé souhaitez vous avoir un montlhy course?</p></div>";
         messagenumber++;
     }
     else{
-        message = "<div class='message'> <p>Bot</p><p>Nous n'avons pas réussis à vous identifier. Si vous n'êtes pas un de nos clients, nous vous suggerons de venir à la Maison Epigenetic afin que nous puissons vous conseiller au mieux pour votre santé</p></div>";
+        message = "<div class='message'> <p class='message-sender'>Bot</p><p>Nous n'avons pas réussis à vous identifier. Si vous n'êtes pas un de nos clients, nous vous suggerons de venir à la Maison Epigenetic afin que nous puissons vous conseiller au mieux pour votre santé</p></div>";
     }
-    console.log(messagenumber);
     sendBotMessage(message);
 }
 function numberverification(){

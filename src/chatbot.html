@@ -11,8 +11,8 @@
 <body>
     <div class="chat-container">
         <div class="chat-box" id="chat-box">
-            <div class="chat-message">
-                <p>
+            <div class="message">
+                <p class="message-sender">
                     Bot
                 </p>
                 <p>
@@ -20,8 +20,12 @@
                 </p>
             </div>
         </div>
-        <input type="text" id="message-input" placeholder="Type your message...">
-        <button onclick="sendMessage()">Send</button>
+        <div class="message-input">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white dark:text-black"><path d="M7 11L12 6L17 11M12 18V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+        </div>
     </div>
 </body>
 
